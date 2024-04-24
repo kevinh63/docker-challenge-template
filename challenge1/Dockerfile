@@ -1,11 +1,7 @@
-# Use the Nginx image from Docker Hub
-FROM nginx:alpine
+FROM nginx
 
-# Copy the static content into the container
-COPY ./public /usr/share/nginx/html
+COPY public /usr/share/nginx/html
 
-# Expose port 80 to the host machine
-EXPOSE 80
+EXPOSE 8080
 
-# Start Nginx when the container has provisioned
 CMD ["nginx", "-g", "daemon off;"]
